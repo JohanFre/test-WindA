@@ -1,22 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
-</head>
-<body>
-    <h1>Hello Winda!</h1>
-    <h2>Hello Winda!</h2>
+  </head>
+  <body>
+    <div id="first"></div>
+    <br />
+    <div id="second"></div>
+    <br />
+    <div id="third"></div>
+  </body>
 
-    <img rel="stylesheet" src="">
+  <!-- Javascript  - LOOPS -->
+  <script>
+    // First assignment.
+    let firstAss = document.getElementById("first");
+    let secondAss = document.getElementById("second");
+    let thirdAss = document.getElementById("third");
 
-    <button id="btn">Press me!</button>
+    for (let i = 1; i <= 10; i++) {
+      if (i % 2 == 0) {
+        firstAss.innerHTML += "X" + "<br/>";
+        console.log(i + " is even.");
+      } else if (i == 5) {
+        firstAss.innerHTML += "Q" + "<br/>";
+        console.log(i + " is FIVE.");
+      } else {
+        firstAss.innerHTML += "O" + "<br/>";
+        console.log(i + " is odd.");
+      }
+    }
 
-    <p id="pTag">Vad gör du?</p>
-    
-</body>
+    // Second assignment.
+    for (x = 1; x <= 20; x++) {
+      let randomChar = "     ";
+      let space = "";
+      for (y = 1; y <= 5; y++) {
+        space = randomChar.charAt(Math.random() * 5 * randomChar.length);
+      }
+      secondAss.innerHTML += "P" + space;
+      console.log("0" + space);
+    }
+  </script>
 
-<script src="script.js"></script>
-</html>
+  <!--
+  <script src="/scripts.js/script.js"></script>
+--></html>
