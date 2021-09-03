@@ -18,32 +18,65 @@
   <!-- Javascript  - LOOPS -->
   <script>
     // First assignment.
+
+    // Deklarerar variablar som kopplas till div:arna i HTML.
     let firstAss = document.getElementById("first");
     let secondAss = document.getElementById("second");
     let thirdAss = document.getElementById("third");
 
+    // For-loop som räknar från 1 till 10, ökar med 1 varje gång.
     for (let i = 1; i <= 10; i++) {
+      // If-sats för att få ut rätt bokstav på odd/even.
+
       if (i % 2 == 0) {
+        // Om i går att dela med 2 så är talet jämt.
         firstAss.innerHTML += "X" + "<br/>";
         console.log(i + " is even.");
       } else if (i == 5) {
+        // om "i" är = 5 så printas Q istället för O.
         firstAss.innerHTML += "Q" + "<br/>";
         console.log(i + " is FIVE.");
       } else {
+        // Annars så är talet ojämt.
         firstAss.innerHTML += "O" + "<br/>";
         console.log(i + " is odd.");
       }
     }
 
     // Second assignment.
+
+    var text = ""; // Skapar en tom variabel som skall fyllas.
     for (x = 1; x <= 20; x++) {
-      let randomChar = "     ";
-      let space = "";
-      for (y = 1; y <= 5; y++) {
-        space = randomChar.charAt(Math.random() * 5 * randomChar.length);
+      // For-loop som räknar från 1 till 20 och ökar med 1.
+      var space = Math.floor(Math.random() * 5 + 1); // Variabel som sparar en random siffra mellan 1-5.
+      text = text.concat("O"); // Lägger till ett "O" i text variabeln, som sedan fylls med tomrum i loopen.
+      for (y = 0; y < space; y++) {
+        // For-loop som skapar så många tomrum som Math.random fick fram.
+        text = text.concat("&nbsp"); // Fyller variabeln text med tomrummen.
       }
-      secondAss.innerHTML += "P" + space;
-      console.log("0" + space);
+    }
+    secondAss.innerHTML = text; // Presenterar det på sidan.
+
+    // Third assignment.
+
+    // Variabeln "cityNames" skapas och innehåller arrayen med städer.
+    let cityNames = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm"];
+    // For-loop som körs tills den gått igenom alla bokstäver i arrayen.
+    for (i = 0; i < cityNames.length; i++) {
+      // Fyller variabeln "letters" med bokstäverna från städerna.
+      let letters = cityNames[i];
+      // For-loop som kör igenom alla bokstäverna.
+      for (x = 0; x < letters.length; x++) {
+        // Om det är den första bokstaven i en stad så skall bokstaven bli "storbokstav".
+        if (x == 0) {
+          thirdAss.innerHTML += letters[x].toUpperCase() + "<br>"; // <br> gör att efter en bokstav så blir det en ny rad.
+          console.log(letters[x].toUpperCase());
+        } else {
+          // Annars printas bokstäverna ut i små bokstäver.
+          thirdAss.innerHTML += letters[x] + "<br>"; // <br> gör att efter en bokstav så blir det en ny rad.
+          console.log(letters[x]);
+        }
+      }
     }
   </script>
 
